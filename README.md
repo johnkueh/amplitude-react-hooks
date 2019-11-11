@@ -9,7 +9,7 @@
 </a>
 <h1>Amplitude React Hooks</h1>
 
-Use [amplitude-js](https://github.com/amplitude/amplitude-javascript) as React hooks. Encourage consistency when declaring commonly used event names by using pre-configured hooks. Use `track` and `identify` methods for instrumenting any custom events and user properties.
+Use [amplitude-js](https://github.com/amplitude/amplitude-javascript) as React hooks. Encourage consistency when declaring commonly used event names by using pre-configured hooks with TypeScript definitions. Use `track` and `identify` methods for instrumenting any custom events and user properties.
 
 </div>
 
