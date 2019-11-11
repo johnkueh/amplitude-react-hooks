@@ -27,6 +27,12 @@ const App = () => (
 render(<App />, document.getElementById("root"));
 ```
 
+Under the hood, the library will load `amplitude-js` and call the following methods:
+
+```js
+amplitude.getInstance().init("API_KEY");
+```
+
 ## Tracking pre-configured events
 
 ### Page views
@@ -82,7 +88,7 @@ const SignupPage = () => {
 export default SignupPage;
 ```
 
-Under the hood, the library will call the following methods
+Under the hood, the library will call the following methods:
 
 ```js
 amplitude.getInstance().logEvent("Signed up", {
@@ -146,7 +152,7 @@ const PaymentsPage = () => {
 export default PaymentsPage;
 ```
 
-Under the hood, the library will call the following methods
+Under the hood, the library will call the following methods:
 
 ```js
 amplitude.getInstance().logEvent("Upgraded To Paid Plan", {
@@ -212,7 +218,7 @@ const SignupPage = () => {
 export default SignupPage;
 ```
 
-Under the hood, the library will call the following methods
+Under the hood, the library will call the following methods:
 
 ```js
 amplitude.getInstance().logEvent("Signed up", {
@@ -257,7 +263,7 @@ const SignupPage = () => {
 export default SignupPage;
 ```
 
-Under the hood, the library will call the following methods
+Under the hood, the library will call the following methods:
 
 ```js
 var userProperties = {
