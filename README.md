@@ -141,14 +141,14 @@ const PaymentsPage = () => {
         const { subscription } = await subscribeToPlan({
           planId: "basic",
           interval: "month",
-          source: 'tok_mastercard,
-          customerId: 'cus_9fYy2VJUHCLMB1'
+          source: "tok_mastercard",
+          customerId: "cus_9fYy2VJUHCLMB1"
         });
         trackUpgradedToPaid({
           id: subscription.id,
           plan: subscription.planId,
           interval: subscription.interval,
-          amount: subscription.amount,
+          amount: subscription.amount
         });
       }}
     >
