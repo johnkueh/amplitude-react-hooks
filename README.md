@@ -212,7 +212,7 @@ const SignupPage = () => {
       onSubmit={e => {
         e.preventDefault();
         const { user } = await performSignup();
-        track("Signed Up", {
+        track("Submitted Signed Up", {
           id: user.id,
           email: user.email,
           name: user.name
@@ -240,7 +240,8 @@ export default SignupPage;
 Under the hood, the library will call the following methods:
 
 ```js
-amplitude.getInstance().logEvent("User Signed Up", {
+amplitude.getInstance().logEvent("Clicked Sign Up");
+amplitude.getInstance().logEvent("Submitted Signed Up", {
   id: "123",
   email: "email@example.com",
   name: "John Doe"
