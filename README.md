@@ -68,6 +68,12 @@ const PricingPage = () => {
 export default PricingPage;
 ```
 
+Under the hood, the library will load `amplitude-js` and call the following methods:
+
+```js
+amplitude.getInstance().logEvent("Pricing Page Viewed");
+```
+
 ### User signed up
 
 ```tsx
@@ -104,7 +110,7 @@ export default SignupPage;
 Under the hood, the library will call the following methods:
 
 ```js
-amplitude.getInstance().logEvent("Signed up", {
+amplitude.getInstance().logEvent("User Signed Up", {
   id: "123",
   email: "email@example.com",
   name: "John Doe"
@@ -234,7 +240,7 @@ export default SignupPage;
 Under the hood, the library will call the following methods:
 
 ```js
-amplitude.getInstance().logEvent("Signed up", {
+amplitude.getInstance().logEvent("User Signed Up", {
   id: "123",
   email: "email@example.com",
   name: "John Doe"
