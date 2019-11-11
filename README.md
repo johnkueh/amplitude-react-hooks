@@ -1,2 +1,2 @@
-# react-amplitude-hooks
+# amplitude-react-hooks
 Use Amplitude Client as React hooks.
