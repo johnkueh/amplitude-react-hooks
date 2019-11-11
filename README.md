@@ -35,14 +35,14 @@ amplitude.getInstance().init("YOUR_AMPLITUDE_API_KEY");
 
 ## Tracking pre-configured events
 
-### Page views
+### User viewed a page
 
 ```tsx
 import React from "react";
 import { useAmplitude } from "amplitude-react-hooks";
 
 const PricingPage = () => {
-  const { trackPageView } = useAmplitude();
+  const { trackPageViewed } = useAmplitude();
 
   // Fire once when component loads
   useEffect(() => {
@@ -55,7 +55,7 @@ const PricingPage = () => {
 export default PricingPage;
 ```
 
-### Signed up
+### User signed up
 
 ```tsx
 import React from "react";
@@ -105,7 +105,7 @@ var userProperties = {
 amplitude.getInstance().setUserProperties(userProperties);
 ```
 
-### Upgraded to paid
+### User upgraded to a paid plan
 
 ```tsx
 import React from "react";
@@ -230,7 +230,7 @@ amplitude.getInstance().logEvent("Signed up", {
 
 ## Identifying users
 
-### Set any user properties to identify the user
+### Setting user properties to identify the user
 
 ```tsx
 import React from "react";
