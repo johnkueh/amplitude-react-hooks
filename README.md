@@ -1,6 +1,20 @@
-# amplitude-react-hooks
+<div align="center">
+<h1>Amplitude React Hooks</h1>
 
-Use [amplitude-js](https://github.com/amplitude/amplitude-javascript) as React hooks.
+<a href="https://www.metricsjar.com/amplitude-react-hooks">
+  <img
+    height="60"
+    width="60"
+    alt="Logo"
+    src="https://www.metricsjar.com/static/apple-touch-icon.png"
+  />
+</a>
+
+React hooks implementation of [amplitude-js](https://github.com/amplitude/amplitude-javascript).
+
+</div>
+
+<hr />
 
 ## Installation
 
