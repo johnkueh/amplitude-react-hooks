@@ -15,12 +15,6 @@ React hooks implementation of [amplitude-js](https://github.com/amplitude/amplit
 
 </div>
 
-[![version][version-badge]][package] [![downloads][downloads-badge]][npmtrends]
-
-[![Watch on GitHub][github-watch-badge]][github-watch]
-[![Star on GitHub][github-star-badge]][github-star]
-[![Tweet][twitter-badge]][twitter]
-
 ## Installation
 
 `yarn add amplitude-js amplitude-react-hooks`
