@@ -1,0 +1,23 @@
+{
+  "name": "amplitude-react-hooks",
+  "version": "1.0.0",
+  "description": "Use Amplitude Client as React hooks.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MetricsJar/amplitude-react-hooks.git"
+  },
+  "keywords": [
+    "amplitude",
+    "hooks"
+  ],
+  "author": "John Kueh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MetricsJar/amplitude-react-hooks/issues"
+  },
+  "homepage": "https://github.com/MetricsJar/amplitude-react-hooks#readme"
+}
