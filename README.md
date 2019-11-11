@@ -6,15 +6,20 @@
     height="60"
     width="60"
     alt="Logo"
+    style="margin: 20px 0 0 0;"
     src="https://www.metricsjar.com/static/apple-touch-icon.png"
   />
 </a>
 
-React hooks implementation of [amplitude-js](https://github.com/amplitude/amplitude-javascript).
+React hooks implementation of [amplitude-js](https://github.com/amplitude/amplitude-javascript). Encourage consistency by using pre-configured hooks for commonly tracked events. Use `track` and `identify` methods for any custom events and user properties.
 
 </div>
 
-<hr />
+[![version][version-badge]][package] [![downloads][downloads-badge]][npmtrends]
+
+[![Watch on GitHub][github-watch-badge]][github-watch]
+[![Star on GitHub][github-star-badge]][github-star]
+[![Tweet][twitter-badge]][twitter]
 
 ## Installation
 
