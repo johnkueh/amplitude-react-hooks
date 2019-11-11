@@ -30,7 +30,7 @@ render(<App />, document.getElementById("root"));
 Under the hood, the library will load `amplitude-js` and call the following methods:
 
 ```js
-amplitude.getInstance().init("API_KEY");
+amplitude.getInstance().init("YOUR_AMPLITUDE_API_KEY");
 ```
 
 ## Tracking pre-configured events
