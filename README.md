@@ -9,7 +9,7 @@
 </a>
 <h1>Amplitude React Hooks</h1>
 
-React hooks implementation of [amplitude-js](https://github.com/amplitude/amplitude-javascript). Encourage consistency in your analytics schema by using pre-configured hooks for commonly tracked events. Use `track` and `identify` methods for any custom events and user properties.
+Use [amplitude-js](https://github.com/amplitude/amplitude-javascript) as React hooks. Encourage consistency in your event names by using pre-configured hooks for commonly tracked events. Use `track` and `identify` methods for instrumenting any custom events and user properties.
 
 </div>
 
@@ -46,7 +46,7 @@ Under the hood, the library will load `amplitude-js` and call the following meth
 amplitude.getInstance().init("YOUR_AMPLITUDE_API_KEY");
 ```
 
-## Tracking pre-configured events
+## Tracking pre-configured, common events
 
 ### User viewed a page
 
