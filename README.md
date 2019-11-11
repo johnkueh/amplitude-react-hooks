@@ -1,7 +1,4 @@
 <div align="center">
-<h1>Amplitude React Hooks</h1>
-
-<br />
 <a href="https://www.metricsjar.com/amplitude-react-hooks">
   <img
     height="60"
@@ -10,7 +7,7 @@
     src="https://www.metricsjar.com/static/apple-touch-icon.png"
   />
 </a>
-<br />
+<h1>Amplitude React Hooks</h1>
 
 React hooks implementation of [amplitude-js](https://github.com/amplitude/amplitude-javascript). Encourage consistency in your analytics schema by using pre-configured hooks for commonly tracked events. Use `track` and `identify` methods for any custom events and user properties.
 
