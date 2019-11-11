@@ -27,9 +27,9 @@ const App = () => (
 render(<App />, document.getElementById("root"));
 ```
 
-### Tracking events
+## Tracking pre-configured events
 
-Page views
+### Page views
 
 ```tsx
 import React from "react";
@@ -49,7 +49,7 @@ const PricingPage = () => {
 export default PricingPage;
 ```
 
-Signed up
+### Signed up
 
 ```tsx
 import React from "react";
@@ -99,4 +99,171 @@ var userProperties = {
 amplitude.getInstance().setUserProperties(userProperties);
 ```
 
-### Setting user properties
+### Upgraded to paid
+
+```tsx
+import React from "react";
+import { useAmplitude } from "amplitude-react-hooks";
+import { subscribeToPlan } from "../../helpers/billing";
+
+const PaymentsPage = () => {
+  const { trackUpgradedToPaid } = useAmplitude();
+
+  return (
+    <form
+      onSubmit={e => {
+        e.preventDefault();
+        const { subscription } = await subscribeToPlan({
+          planId: "basic",
+          interval: "month",
+          source: 'tok_mastercard,
+          customerId: 'cus_9fYy2VJUHCLMB1'
+        });
+        trackUpgradedToPaid({
+          id: subscription.id,
+          plan: subscription.planId,
+          interval: subscription.interval,
+          amount: subscription.amount,
+        });
+      }}
+    >
+      <input name="cc_number" placeholder="Credit card number" />
+      <input name="exp_month" placeholder="Expiry month" />
+      <input name="exp_year" placeholder="Expiry year" />
+      <input name="last4" placeholder="Security Code" />
+      <input name="interval" value="month" type="radio" checked />
+      <input name="interval" value="year" type="radio" />
+      <select name="planId" value="basic">
+        <option value="basic">Basic</option>
+        <option value="premium">Premium</option>
+        <option value="enterprise">Enterprise</option>
+      </select>
+      <button type="submit">Subscribe</button>
+    </form>
+  );
+};
+
+export default PaymentsPage;
+```
+
+Under the hood, the library will call the following methods
+
+```js
+amplitude.getInstance().logEvent("Upgraded To Paid Plan", {
+  id: "sub_9h6CopvY0Fldnj",
+  planId: 'basic';
+  billingInterval: 'month',
+  amount: 99000,
+  paymentProviderCustId: 'cus_9fYy2VJUHCLMB1';
+});
+
+var userProperties = {
+  id: "123",
+  plan: {
+    id: 'basic',
+    interval: 'month'
+    amount: 99000,
+    subscriptionId: 'sub_9h6CopvY0Fldnj',
+    customerId: 'cus_9fYy2VJUHCLMB1',
+  }
+};
+amplitude.getInstance().setUserProperties(userProperties);
+```
+
+## Tracking custom events
+
+### Track any event
+
+```tsx
+import React from "react";
+import { useAmplitude } from "amplitude-react-hooks";
+import { performSignup } from "../../helpers/signup";
+
+const SignupPage = () => {
+  const { track } = useAmplitude();
+
+  return (
+    <form
+      onSubmit={e => {
+        e.preventDefault();
+        const { user } = await performSignup();
+        track("Signed Up", {
+          id: user.id,
+          email: user.email,
+          name: user.name
+        });
+      }}
+    >
+      <input type="email" placeholder="Email address" />
+      <input type="name" placeholder="Name" />
+      <input type="password" placeholder="Password" />
+      <button
+        onClick={e => {
+          track("Clicked Sign Up");
+        }}
+        type="submit"
+      >
+        Sign up
+      </button>
+    </form>
+  );
+};
+
+export default SignupPage;
+```
+
+Under the hood, the library will call the following methods
+
+```js
+amplitude.getInstance().logEvent("Signed up", {
+  id: "123",
+  email: "email@example.com",
+  name: "John Doe"
+});
+```
+
+## Identifying users
+
+### Set any user properties to identify the user
+
+```tsx
+import React from "react";
+import { useAmplitude } from "amplitude-react-hooks";
+import { performSignup } from "../../helpers/signup";
+
+const SignupPage = () => {
+  const { identify } = useAmplitude();
+
+  return (
+    <form
+      onSubmit={e => {
+        e.preventDefault();
+        const { user } = await performSignup();
+        identify({
+          id: user.id,
+          email: user.email,
+          name: user.name
+        });
+      }}
+    >
+      <input type="email" placeholder="Email address" />
+      <input type="name" placeholder="Name" />
+      <input type="password" placeholder="Password" />
+      <button type="submit">Sign up</button>
+    </form>
+  );
+};
+
+export default SignupPage;
+```
+
+Under the hood, the library will call the following methods
+
+```js
+var userProperties = {
+  id: "123",
+  email: "email@example.com",
+  name: "John Doe"
+};
+amplitude.getInstance().setUserProperties(userProperties);
+```
