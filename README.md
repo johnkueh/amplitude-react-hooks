@@ -57,7 +57,7 @@ import { useAmplitude } from "amplitude-react-hooks";
 const PricingPage = () => {
   const { trackPageViewed } = useAmplitude();
 
-  // Fire once when component loads
+  // Fire once when component mounts
   useEffect(() => {
     trackPageViewed("Pricing");
   }, []);
